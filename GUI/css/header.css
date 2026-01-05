@@ -1,0 +1,141 @@
+html, body { font-weight: 600; }
+
+/* General styling for the header container */
+.contranner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(90deg, #007bff 0%, #00bcd4 100%);
+    padding: 12px 28px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+/* Rounded right corners for a modern look */
+.contranner {
+    border-radius: 14px 14px 0 0;
+}
+
+/* Styling for the logo section */
+.logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,0.98);
+    padding: 6px 12px;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.logo-wrap .site-logo {
+    height: 52px;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Styling for the wrapper containing the menu */
+.contranner .wrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Remove default list styling */
+.contranner .wrapper .menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap; /* allow wrapping so items won't overflow */
+}
+
+/* Styling for each menu item */
+.contranner .wrapper .menu li {
+    margin: 0;
+    /* Space handled by gap on the menu */
+    white-space: nowrap;
+}
+
+/* Styling for the links */
+.contranner .wrapper .menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 12px 18px;
+    display: block;
+    transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+    background: rgba(255,255,255,0.04);
+    border-radius: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+/* Hover effect for links */
+.contranner .wrapper .menu li a:hover {
+    background-color: #ffffff;
+    color: #1f8a39;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.14);
+}
+
+/* Active link styling */
+.contranner .wrapper .menu li a.active {
+    background-color: rgba(255,255,255,0.2);
+    color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+
+/* Highlighted rounded user/logout pill at top-right */
+.contranner .wrapper .menu li.user-pill a {
+    background: #ffffff;
+    color: #28a745;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 999px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.contranner .wrapper .menu li.user-pill a:hover {
+    background: #ffffff;
+    color: #007bff;
+    transform: translateY(-2px);
+}
+
+/* On very small screens reduce shadows and spacing */
+@media (max-width: 720px) {
+    .contranner { margin: 6px 12px; padding: 10px 12px; }
+    .logo-wrap .site-logo { height: 44px; }
+    .contranner .wrapper .menu li a { padding: 8px 10px; font-size: 14px; }
+}
+
+@media (max-width: 420px) {
+    .logo-wrap { padding: 4px 6px; }
+    .logo-wrap .site-logo { height: 36px; }
+    .contranner .wrapper .menu li a { padding: 6px 8px; font-size: 13px; }
+    .contranner { padding: 8px 10px; }
+}
+
+/* Responsive: stack menu on small screens */
+@media (max-width: 720px) {
+    .contranner {
+        padding: 10px 12px;
+    }
+    .contranner .wrapper .menu {
+        gap: 8px;
+    }
+    .contranner .logo img {
+        height: 42px;
+    }
+}

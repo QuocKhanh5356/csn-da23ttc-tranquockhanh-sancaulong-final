@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    background-color: #e0cedd8c;
+    font-weight: 600;
+}
+
+h2 {
+    padding: 20px 0px;
+    font-weight: bold;
+}
+
+.header_pitchManage {
+    padding: 20px 0;
+    background-color: #6c757d;
+    color: white;
+    text-align: center;
+    border-bottom: 4px solid white;
+}
+
+.header_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+h2 {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 15px 0px;
+}
+
+.table {
+    background-color: white;
+    border-collapse: collapse;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table th,
+.table td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #343a40;
+    color: white;
+}
+
+.table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.table a {
+    color: black;
+    text-decoration: none;
+}
+
+.table a:hover {
+    color: #4CAF50;
+    text-decoration: underline;
+}
+
+.badge {
+    padding: 0.5em 0.75em;
+    border-radius: 0.25em;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+
+.modal4 {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content4 {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 45%;
+    height: 370px;
+    margin-top: 200px;
+}
+
+.img-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.img-gallery__item {
+    overflow: hidden;
+}
+
+.img-gallery__item img {
+    width: 100%;
+    height: 150px;
+}
+
+.table button[name='Anh'] {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}

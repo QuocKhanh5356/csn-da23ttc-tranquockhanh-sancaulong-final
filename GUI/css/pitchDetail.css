@@ -1,0 +1,349 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0cedd8c;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.image-gallery {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.main-image img {
+    width: 100%;
+    width: 600px;
+    /* Fixed width for main image */
+    height: 400px;
+    /* Fixed height for main image */
+    object-fit: cover;
+    border-radius: 8px;
+    transition: opacity 1s;
+}
+
+.main-image img.hidden {
+    opacity: 0;
+}
+
+.thumbnails-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.thumbnails {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px;
+    /* Aligning with the main image width */
+}
+
+.thumbnails img {
+    width: 100px;
+    height: 100px;
+    /* Fixed size for thumbnails */
+    margin: 5px;
+    cursor: pointer;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+    object-fit: cover;
+}
+
+.thumbnails img:hover {
+    border-color: #19458a;
+}
+
+.scroll-buttons {
+    display: none;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.scroll-buttons button {
+    background-color: #19458a;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Details Panel */
+.details-panel {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.pitch-name {
+    color: #19458a;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.status {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.pitch-details {
+    margin-bottom: 20px;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #ffffff;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.detail-item .label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #495057;
+}
+
+.detail-item .value {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.action-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.action-buttons .button.primary {
+    position: absolute;
+    bottom: 20px;
+    left: 195px;
+    width: 250px;
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #ffffff;
+}
+
+.action-buttons .button.primary:hover {
+    position: absolute;
+    bottom: 20px;
+    left: 195px;
+    width: 250px;
+    background-color: #0056b3;
+    border-color: #0056b3;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.action-buttons .button.secondary {
+    position: absolute;
+    bottom: 20px;
+    left: 465px;
+    width: 250px;
+    background-color: #343a40;
+    border-color: #343a40;
+    color: #ffffff;
+}
+
+.action-buttons .button.secondary:hover {
+    position: absolute;
+    bottom: 20px;
+    left: 465px;
+    width: 250px;
+    background-color: #de1717c5;
+    border-color: #de1717c5;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.booked-times-section {
+    margin-bottom: 20px;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.booked-times-section h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #495057;
+    text-align: center;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+.booked-times-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.booked-time-item {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #dc3545;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.booked-date {
+    font-weight: bold;
+    color: #007bff;
+    font-size: 16px;
+}
+
+.booked-time-range {
+    color: #6c757d;
+    font-size: 14px;
+}
+
+.booked-customer {
+    font-style: italic;
+    color: #495057;
+    font-size: 14px;
+}
+
+.no-bookings {
+    text-align: center;
+    color: #6c757d;
+    font-style: italic;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    /* đảm bảo nó nằm trên cùng */
+}
+
+/* Popup Form */
+.popup {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1100;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.popup h1 {
+    color: #19458a;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.popup table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+
+.popup table td {
+    padding: 10px 0;
+}
+
+.popup table label {
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.popup table input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.popup-actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.popup .button {
+    width: auto;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.popup .button.primary {
+    background-color: #4CAF50;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.popup .button.primary:hover {
+    background-color: #4CAF50;
+}
+
+.popup .button.secondary {
+    background-color: #ccc;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.popup .button.secondary:hover {
+    background-color: #b3b3b3;
+}

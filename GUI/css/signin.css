@@ -1,0 +1,125 @@
+ body {
+     margin: 0px;
+     padding: 0px;
+     font-family: Arial, sans-serif;
+     font-weight: 600;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+ }
+
+ .container {
+     background: white;
+     border: 7px solid #fff;
+     border-radius: 12px;
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+     max-width: 650px;
+     width: 100%;
+     padding: 20px;
+     overflow: hidden;
+ }
+
+ .form-control {
+     border-radius: 20px;
+     border: 2px solid transparent;
+     box-shadow: 0 10px 10px -5px #cff0ff;
+     transition: border-color 0.3s ease;
+ }
+
+ .form-control:focus {
+     border-color: #007bff;
+     outline: none;
+ }
+
+ .btn-success {
+     border-radius: 20px;
+     background: linear-gradient(45deg, #28a745 0%, #20c997 100%);
+     border: none;
+     transition: transform 0.2s ease;
+ }
+
+ .btn-success:hover {
+     transform: scale(1.05);
+ }
+
+ .btn-dark {
+     border-radius: 20px;
+     transition: background-color 0.3s ease;
+ }
+
+ h2 {
+     text-align: center;
+ }
+
+ .button-group {
+     display: flex;
+     justify-content: center;
+     gap: 20px;
+     margin-top: 20px;
+ }
+
+ #gui {
+     width: 210px;
+ }
+
+ #huybo {
+     display: inline-block;
+     width: 210px;
+     text-align: center;
+     padding: 10px -2px;
+     text-decoration: none;
+     color: white;
+     background-color: #343a40;
+     border-radius: 20px;
+     font-size: 1rem;
+     font-weight: 400;
+     line-height: 1.5;
+     border: 1px solid transparent;
+ }
+
+ #huybo:hover {
+     background-color: red;
+ }
+
+ .error {
+     color: red;
+ }
+
+ /* Định vị tương đối cho phần tử chứa để sử dụng vị trí tuyệt đối */
+ .mb-3.position-relative {
+     position: relative;
+ }
+
+ /* Định vị biểu tượng tuyệt đối bên trong input */
+ #ia,
+ #ib {
+     position: absolute;
+     right: 10px;
+     /* Đặt khoảng cách từ bên phải của input */
+     top: 75%;
+     transform: translateY(-50%);
+     /* Để căn giữa theo chiều dọc */
+     cursor: pointer;
+     /* Đổi con trỏ khi hover */
+     color: #6c757d;
+     /* Màu của biểu tượng */
+ }
+
+ /* Đảm bảo input có đủ khoảng trống cho biểu tượng */
+ input.form-control {
+     padding-right: 35px;
+     /* Tạo khoảng trống cho biểu tượng */
+ }
+
+ a {
+     color: #23272b;
+ }
+
+ a:hover {
+     color: #28a745;
+ }
+
+ a i {
+     width: 15px;
+ }

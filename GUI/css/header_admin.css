@@ -1,0 +1,101 @@
+.html, body { font-weight: 600; }
+
+/* General styling for the header container */
+.contranner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(90deg, #007bff 0%, #00bcd4 100%);
+    padding: 12px 40px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 15px 15px 0 0;
+}
+
+/* Styling for the logo section */
+.contranner .logo {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.contranner .logo img {
+    height: 52px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Styling for the wrapper containing the menu */
+.contranner .wrapper {
+    flex-grow: 1;
+}
+
+/* Remove default list styling */
+.contranner .wrapper .menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    /* Align menu items to the right */
+}
+
+/* Styling for each menu item */
+.contranner .wrapper .menu li {
+    margin: 0 15px;
+    /* Space between menu items */
+
+}
+
+/* Styling for the links */
+.contranner .wrapper .menu li a {
+    color: whitesmoke;
+    ;
+    /* Text color for links */
+    text-decoration: none;
+    /* Remove underline */
+    font-size: 16px;
+    /* Font size */
+    padding: 10px 15px;
+    /* Padding for clickable area */
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+    /* Smooth transition for hover effect */
+}
+
+/* Hover effect for links */
+.contranner .wrapper .menu li a:hover {
+    background-color: #e2e6ea;
+    /* Slightly darker background on hover */
+    color: #007bff;
+    /* Blue color for text on hover */
+    border-radius: 5px;
+    /* Rounded corners on hover */
+}
+
+/* Logout button styling */
+.logout-btn {
+    background-color: white !important;
+    color: #007bff !important;
+    font-weight: 600;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logout-btn:hover {
+    background-color: #e2e6ea !important;
+    color: #0056b3 !important;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Active link styling */
+.contranner .wrapper .menu li a.active {
+    background-color: #007bff;
+    /* Background color for active link */
+    color: white;
+    /* White text for active link */
+    border-radius: 5px;
+    /* Rounded corners for active link */
+}
