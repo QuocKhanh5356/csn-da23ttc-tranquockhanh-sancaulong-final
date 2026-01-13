@@ -38,6 +38,10 @@ class UserService
      public function getUserById($id) {
         return $this->userRepository->findUserById($id);
     }
+
+    public function getUserByEmail($email) {
+        return $this->userRepository->findUserByEmail($email);
+    }
     public function updateUser($id, $name, $password, $phone, $email, $address) {
         return $this->userRepository->updateUser($id, $name, $password, $phone, $email, $address);
     }
@@ -76,5 +80,34 @@ class UserService
         } else {
             return false;
         }
+    }
+
+    public function getEmployees() {
+        $typeId = $this->userRepository->getTypeIdByName('employee');
+        if ($typeId) {
+            return $this->userRepository->findUsersByType($typeId);
+        }
+        return [];
+    }
+
+    public function toggleUserActive($id) {
+        $user = $this->getUserById($id);
+        if ($user) {
+            $newActive = $user['active'] ? 0 : 1;
+            return $this->userRepository->updateUserActive($id, $newActive);
+        }
+        return false;
+    }
+
+    public function getEmployeeTypeId() {
+        return $this->userRepository->getTypeIdByName('employee');
+    }
+
+    public function getCustomers() {
+        $customerTypeId = $this->userRepository->getTypeIdByName('customer');
+        if ($customerTypeId) {
+            return $this->userRepository->findUsersByType($customerTypeId);
+        }
+        return [];
     }
 }

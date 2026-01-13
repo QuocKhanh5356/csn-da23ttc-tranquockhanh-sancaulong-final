@@ -20,6 +20,18 @@ ob_start();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="./css/pitchManage.css?v = <?php echo time(); ?>">
+    <style>
+        body {
+            padding-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .body_pitchManage {
+            flex: 1;
+            padding-bottom: 80px; /* to prevent footer overlap */
+        }
+    </style>
 </head>
 
 <body>
@@ -30,17 +42,13 @@ ob_start();
         <nav class="menu2">
             <ul>
                 <li>
-                    <form method="post" action="">
-                        <button name="ButThem" class="butthem">Thêm sân</button>
-                    </form>
+                    <a href="dashboard_admin.php?pg=addPitch" class="butthem">Thêm sân</a>
                 </li>
                 <li>
-                    <form method="post" action=""><button name="ButSua" class="butsua">Cập nhật sân</button>
-                    </form>
+                    <a href="dashboard_admin.php?pg=selectPitch" class="butsua">Cập nhật sân</a>
                 </li>
                 <li>
-                    <form method="post" action=""><button name="ThemHinhAnh" class="butthem">Thêm hình ảnh</button>
-                    </form>
+                    <a href="dashboard_admin.php?pg=addImage" class="butthem">Thêm hình ảnh</a>
                 </li>
 
         </nav>
@@ -48,36 +56,7 @@ ob_start();
 
     <div class="body_pitchManage">
         <?php if ($showForm): ?>
-        <div class="modal">
-            <div class="modal-content">
-                <form id="pitchForm" action="" method="post">
-
-                    <label for="pitchName">Tên sân cầu lông:</label>
-                    <input type="text" name="pitchName"><br><br>
-                    <label for="pitchTimeStart">thời gian bắt đầu:</label>
-                    <input type="time" name="pitchTimeStart"><br><br>
-                    <label for="pitchTimeEnd">Thời gian kết thúc:</label>
-                    <input type="time" name="pitchTimeEnd"><br><br>
-                    <label for="Description">Mô tả:</label>
-                    <input type="text" name="Description"><br><br>
-                    <label for="price_per_hour">Giá sân trong 1 giờ:</label>
-                    <input type="text" name="price_per_hour"><br><br>
-                    <label for="price_per_peak_hour">Giá sân lúc cao điểm:</label>
-                    <input type="text" name="price_per_peak_hour"><br><br>
-                    <label for="is_maintenance">Bảo trì:</label>
-                    <select name="is_maintenance" id="is_maintenance" style="width: 100%; height: 35px;">
-                        <option value="0">Đang hoạt động</option>
-                        <option value="1">Đang bảo trì</option>
-                    </select><br><br>
-                    <label for="pitch_type_id">Mã loại sân:</label>
-                    <input type="text" name="pitch_type_id"><br><br>
-                    <input name="ThemSanCauLong" type="submit" value="Thêm sân cầu lông">
-                    <input name="Thoat" type="submit" value="Thoát">
-
-                </form>
-            </div>
-        </div>
-
+        <!-- Modal thêm sân đã chuyển sang trang riêng -->
         <?php endif;   ?>
 
         <?php
@@ -112,7 +91,7 @@ ob_start();
         <div class="modal2">
             <div class="modal-content2">
                 <form id="pitchForm2" action="" method="post">
-                    <label for="pitchId2">Mã sân bóng:</label>
+                    <label for="pitchId2">Mã sân Cầu lông:</label>
                     <select name="pitchId2">
                         <?php while($row = $result3->fetch_assoc()): ?>
                         <option value="<?php echo $row['id']; ?>"><?php echo $row['id']; ?></option>
@@ -238,24 +217,6 @@ ob_start();
             exit();
         }
 
-    if (isset($_POST['add'])) {
-        $tenSanBong = $_POST['tenSanCauLong'];
-        $hinhAnh = trim($_POST['image']);
-        $idResult = getID($tenSanBong);
-
-    if ($idResult !== false && $idResult->num_rows > 0) {
-        $idRow = $idResult->fetch_assoc();
-        $id = $idRow['id']; 
-
-        if (ThemAnh($hinhAnh, $id)) {
-            echo "<script type='text/javascript'>alert('Đã thêm hình ảnh thành công.');location.replace('dashboard_admin.php?pg=pitchManage');</script>";
-            exit();
-        }
-    } else {
-        echo "<script type='text/javascript'>alert('Không tìm thấy sân cầu lông.');</script>";
-    }
-}
-
        }
     ?>
 
@@ -273,6 +234,7 @@ ob_start();
             });
         });
         </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     </div>
 </body>
 

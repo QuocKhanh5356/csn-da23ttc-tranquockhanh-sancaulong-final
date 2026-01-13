@@ -110,4 +110,38 @@ public function addUser($name, $email, $password, $phone, $address, $type) {
         $stmt->close();
         return $result;
     }
+
+    public function findUsersByType($typeId) {
+        $sql = "SELECT * FROM users WHERE type=?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("i", $typeId);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $users = [];
+        while ($row = $result->fetch_assoc()) {
+            $users[] = $row;
+        }
+        $stmt->close();
+        return $users;
+    }
+
+    public function getTypeIdByName($name) {
+        $sql = "SELECT id FROM user_types WHERE name=?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("s", $name);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        $stmt->close();
+        return $row ? $row['id'] : null;
+    }
+
+    public function updateUserActive($id, $active) {
+        $sql = "UPDATE users SET active=? WHERE id=?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("ii", $active, $id);
+        $result = $stmt->execute();
+        $stmt->close();
+        return $result;
+    }
 }

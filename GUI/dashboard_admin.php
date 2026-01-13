@@ -30,6 +30,27 @@ if(isset($_GET['pg'])){
         case 'promotionManage':
             include 'promotionManage.php';
             break;
+        case 'employeeManage':
+            include 'employeeManage.php';
+            break;
+        case 'inventoryManage':
+            include 'inventoryManage.php';
+            break;
+        case 'revenueStats':
+            include 'revenueStats.php';
+            break;
+        case 'addPitch':
+            include 'addPitch.php';
+            break;
+        case 'selectPitch':
+            include 'selectPitch.php';
+            break;
+        case 'editPitch':
+            include 'editPitch.php';
+            break;
+        case 'addImage':
+            include 'addImage.php';
+            break;
         case 'logout': 
             session_destroy();
             header("Location: login.php");

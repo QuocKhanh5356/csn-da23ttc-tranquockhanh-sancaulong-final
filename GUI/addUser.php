@@ -54,8 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <header class="header_pitchManage">
         <div class="header_content">
-            <img class="logo" src="./img/logomoi.png" alt="not found image.">
-            <h2>Thêm tài khoản</h2>
+                        <h2>Thêm tài khoản</h2>
         </div>
     </header>
     <div class="container">
@@ -84,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <label for="type" class="form-label">Loại tài khoản</label>
                 <select id="type" name="type" class="form-control" required>
                     <option value="1">Admin</option>
-                    <option value="2">Customer</option>
+                    <option value="2">Khách</option>
                 </select>
             </div>
             <button type="submit" class="btn btn-primary">Thêm mới</button>
