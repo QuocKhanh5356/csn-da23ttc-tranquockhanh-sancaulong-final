@@ -18,6 +18,7 @@
             <ul class="menu">
                 <li><a href="dashboard.php?pg=home">Trang chủ</a></li>
                 <li><a href="dashboard.php?pg=pitchSearch">Tìm kiếm sân cầu lông</a></li>
+                <li><a href="dashboard.php?pg=utilities">Tiện ích</a></li>
                 <li><a href="dashboard.php?pg=userEdit">Sửa thông tin cá nhân</a></li>
                 <li><a href="dashboard.php?pg=summary">Lịch sử đặt sân</a></li>
                 <li class="user-pill"><a href="dashboard.php?pg=logout">Đăng xuất</a></li>

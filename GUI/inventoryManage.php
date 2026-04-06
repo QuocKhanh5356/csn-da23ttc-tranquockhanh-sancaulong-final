@@ -24,7 +24,7 @@ $items = $inventoryService->getAllItems();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quản lý kho</title>
+    <title>Quản lý tiện ích</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="css/accountManage.css?v=<?php echo time(); ?>">
@@ -33,7 +33,7 @@ $items = $inventoryService->getAllItems();
 <body>
     <header class="header_pitchManage">
         <div class="header_content">
-            <h2>Quản lý kho</h2>
+            <h2>Quản lý tiện ích</h2>
         </div>
     </header>
     <div class="container mt-4">

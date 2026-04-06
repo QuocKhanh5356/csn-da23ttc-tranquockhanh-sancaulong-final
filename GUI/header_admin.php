@@ -20,7 +20,7 @@
                 <li><a href="dashboard_admin.php?pg=summary">Đơn hàng</a></li>
                 <li><a href="dashboard_admin.php?pg=promotionManage">Khuyến mãi</a></li>
                 <li><a href="dashboard_admin.php?pg=employeeManage">Quản lý nhân viên</a></li>
-                <li><a href="dashboard_admin.php?pg=inventoryManage">Quản lý kho</a></li>
+                <li><a href="dashboard_admin.php?pg=inventoryManage">Quản lý tiện ích</a></li>
                 <li><a href="dashboard_admin.php?pg=revenueStats">Thống kê doanh thu</a></li>
                 <li><a href="dashboard_admin.php?pg=logout" class="logout-btn">Đăng xuất</a></li>
             </ul>

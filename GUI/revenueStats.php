@@ -31,6 +31,26 @@ if ($result_orders) {
     }
 }
 
+// Monthly revenue
+$sql_monthly = "SELECT DATE_FORMAT(created_at, '%Y-%m') as month, SUM(total) as revenue FROM orders WHERE status = 'confirmed' GROUP BY month ORDER BY month";
+$result_monthly = $conn->query($sql_monthly);
+$monthly_data = [];
+if ($result_monthly) {
+    while ($row = $result_monthly->fetch_assoc()) {
+        $monthly_data[] = $row;
+    }
+}
+
+// Weekly revenue
+$sql_weekly = "SELECT DATE_FORMAT(created_at, '%Y-%U') as week, SUM(total) as revenue FROM orders WHERE status = 'confirmed' GROUP BY week ORDER BY week";
+$result_weekly = $conn->query($sql_weekly);
+$weekly_data = [];
+if ($result_weekly) {
+    while ($row = $result_weekly->fetch_assoc()) {
+        $weekly_data[] = $row;
+    }
+}
+
 $conn->close();
 ?>
 
@@ -45,6 +65,7 @@ $conn->close();
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="css/accountManage.css?v=<?php echo time(); ?>">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -68,6 +89,16 @@ $conn->close();
                     <input type="date" name="filter_value" value="<?php echo $filter_value; ?>" class="form-control me-2" style="width: auto;">
                     <button type="submit" class="btn btn-primary">Lọc</button>
                 </form>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <h5>Biểu đồ doanh thu theo tuần</h5>
+                <canvas id="weeklyChart"></canvas>
+            </div>
+            <div class="col-md-6">
+                <h5>Biểu đồ doanh thu theo tháng</h5>
+                <canvas id="monthlyChart"></canvas>
             </div>
         </div>
         <table class="table table-striped table-hover" id="revenueTable">
@@ -102,6 +133,53 @@ $conn->close();
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
     <script>
         $(document).ready(function() {
+            const weeklyLabels = <?php echo json_encode(array_column($weekly_data, 'week')); ?>;
+            const weeklyRevenues = <?php echo json_encode(array_column($weekly_data, 'revenue')); ?>;
+            const monthlyLabels = <?php echo json_encode(array_column($monthly_data, 'month')); ?>;
+            const monthlyRevenues = <?php echo json_encode(array_column($monthly_data, 'revenue')); ?>;
+
+            new Chart(document.getElementById('weeklyChart'), {
+                type: 'bar',
+                data: {
+                    labels: weeklyLabels,
+                    datasets: [{
+                        label: 'Doanh thu (VND)',
+                        data: weeklyRevenues,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('monthlyChart'), {
+                type: 'bar',
+                data: {
+                    labels: monthlyLabels,
+                    datasets: [{
+                        label: 'Doanh thu (VND)',
+                        data: monthlyRevenues,
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
             $('#revenueTable').DataTable({
                 "language": {
                     "url": "//cdn.datatables.net/plug-ins/1.11.5/i18n/vi.json"
