@@ -18,6 +18,9 @@ if(isset($_GET['pg'])){
         case 'userEdit':
             include 'userEdit.php';
             break;
+        case 'profile':
+            include 'profile.php';
+            break;
         case 'pitchSearch':
             include 'pitchSearch.php';
             break;

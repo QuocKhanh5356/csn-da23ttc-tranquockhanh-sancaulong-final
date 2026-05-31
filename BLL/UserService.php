@@ -42,8 +42,8 @@ class UserService
     public function getUserByEmail($email) {
         return $this->userRepository->findUserByEmail($email);
     }
-    public function updateUser($id, $name, $password, $phone, $email, $address) {
-        return $this->userRepository->updateUser($id, $name, $password, $phone, $email, $address);
+    public function updateUser($id, $name, $password, $phone, $email, $address, $background = null) {
+        return $this->userRepository->updateUser($id, $name, $password, $phone, $email, $address, $background);
     }
 
     public function getAllUsers() {

@@ -33,8 +33,8 @@ if(isset($_GET['pg'])){
         case 'employeeManage':
             include 'employeeManage.php';
             break;
-        case 'inventoryManage':
-            include 'inventoryManage.php';
+        case 'utilitiesManage':
+            include 'utilitiesManage.php';
             break;
         case 'revenueStats':
             include 'revenueStats.php';

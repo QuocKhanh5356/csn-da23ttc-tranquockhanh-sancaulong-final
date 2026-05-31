@@ -36,10 +36,20 @@ class UserRepository {
         return $user;
     }
 
-    public function updateUser($id, $name, $password, $phone, $email, $address) {
-        $sql = "UPDATE users SET name=?, password=?, phone=?, email=?, address=? WHERE id=?";
+    public function updateUser($id, $name, $password, $phone, $email, $address, $background = null) {
+        $sql = "UPDATE users SET name=?, password=?, phone=?, email=?, address=?";
+        $params = [$name, $password, $phone, $email, $address];
+        $types = "sssss";
+        if ($background !== null) {
+            $sql .= ", background=?";
+            $params[] = $background;
+            $types .= "s";
+        }
+        $sql .= " WHERE id=?";
+        $params[] = $id;
+        $types .= "i";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("sssssi", $name, $password, $phone, $email, $address, $id);
+        $stmt->bind_param($types, ...$params);
         $result = $stmt->execute();
         $stmt->close();
         return $result;
