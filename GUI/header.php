@@ -4,24 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/header.css?v = <?php echo time(); ?>">
+    <title>Badminton AYA</title>
+    <link rel="stylesheet" href="css/header_admin.css?v = <?php echo time(); ?>">
 </head>
 
 <body>
     <div class="contranner">
-        <div class="logo-wrap">
-            <a href="dashboard.php?pg=home" aria-label="Trang chủ">
-                <img class="site-logo" src="./img/logomoi.png" alt="Badminton AYA logo">
-            </a>
+        <div class="logo">
+            <img src="./img/logomoi.png" alt="">
         </div>
         <div class="wrapper">
             <ul class="menu">
+<<<<<<< HEAD
                 <li><a href="dashboard.php?pg=home">Trang chủ</a></li>
                 <li><a href="dashboard.php?pg=pitchSearch">Tìm kiếm sân cầu lông</a></li>
                 <li><a href="dashboard.php?pg=utilities">Tiện ích</a></li>
                 <li><a href="dashboard.php?pg=profile">Thông tin cá nhân</a></li>
                 <li><a href="dashboard.php?pg=summary">Lịch sử đặt sân</a></li>
                 <li class="user-pill"><a href="dashboard.php?pg=logout">Đăng xuất</a></li>
+=======
+                <li><a href="dashboard_admin.php?pg=pitchManage">Quản lý sân</a></li>
+                <li><a href="dashboard_admin.php?pg=accountManage">Tài khoản</a></li>
+                <li><a href="dashboard_admin.php?pg=summary">Đơn hàng</a></li>
+                <li><a href="dashboard_admin.php?pg=promotionManage">Khuyến mãi</a></li>
+                <li><a href="dashboard_admin.php?pg=employeeManage">Quản lý nhân viên</a></li>
+                <li><a href="dashboard_admin.php?pg=inventoryManage">Quản lý tiện ích</a></li>
+                <li><a href="dashboard_admin.php?pg=revenueStats">Thống kê doanh thu</a></li>
+                <li><a href="dashboard_admin.php?pg=logout" class="logout-btn">Đăng xuất</a></li>
+>>>>>>> 511adb7e3847d6f3dd53e439e9934a7393bc7d05
             </ul>
         </div>
     </div>

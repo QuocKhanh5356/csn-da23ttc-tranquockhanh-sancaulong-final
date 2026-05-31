@@ -20,7 +20,11 @@
                 <li><a href="dashboard_admin.php?pg=summary">Đơn hàng</a></li>
                 <li><a href="dashboard_admin.php?pg=promotionManage">Khuyến mãi</a></li>
                 <li><a href="dashboard_admin.php?pg=employeeManage">Quản lý nhân viên</a></li>
+<<<<<<< HEAD
                 <li><a href="dashboard_admin.php?pg=utilitiesManage">Quản lý tiện ích</a></li>
+=======
+                <li><a href="dashboard_admin.php?pg=inventoryManage">Quản lý tiện ích</a></li>
+>>>>>>> 511adb7e3847d6f3dd53e439e9934a7393bc7d05
                 <li><a href="dashboard_admin.php?pg=revenueStats">Thống kê doanh thu</a></li>
                 <li><a href="dashboard_admin.php?pg=logout" class="logout-btn">Đăng xuất</a></li>
             </ul>
